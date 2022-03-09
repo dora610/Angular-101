@@ -1,0 +1,7 @@
+li{
+    list-style-type: none;
+    width: 25vw;
+    background-color: aquamarine;
+    margin: 2px 5px;
+    text-align: center;
+}
