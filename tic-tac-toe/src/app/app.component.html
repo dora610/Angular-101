@@ -24,7 +24,9 @@
     </div>
 
     <div class="col col-lg-6 text-center">
-      <h1 class="text-uppercase">game over {{ winMessage }}</h1>
+      <div *ngIf="winMessage">
+        <h1 class="text-uppercase text-success">game over {{ winMessage }}</h1>
+      </div>
       <button class="btn btn-danger pl-5 pr-5" (click)="reloadGame()">
         Reload
       </button>
