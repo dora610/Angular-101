@@ -1,0 +1,36 @@
+/* .container {
+  height: 100vh;
+} */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
+}
+
+.box {
+  width: auto;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: aliceblue;
+}
+
+.row {
+  /* height: 100vh; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media screen and (max-width: 760px) {
+  .row {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0px;
+  }
+}
