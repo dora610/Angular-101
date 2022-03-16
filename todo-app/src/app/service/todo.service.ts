@@ -35,7 +35,7 @@ export class TodoService {
         date: new Date(),
       },
       {
-        id: '111',
+        id: '115',
         title: 'Learn redis',
         isCompleted: false,
         date: new Date(),
@@ -52,7 +52,7 @@ export class TodoService {
   }
 
   toggleTodo(id: string) {
-    this.todos = this.todos.map((todo) => {
+    this.todos.map((todo) => {
       if (todo.id === id) {
         todo.isCompleted = !todo.isCompleted;
       }
@@ -60,11 +60,11 @@ export class TodoService {
     });
   }
 
-  deleteTodo(id: string) {
-    this.todos = this.todos.filter((todo): Todo | void => {
-      if (todo.id !== id) {
-        return todo;
-      }
-    });
+  deleteTodo(id: String) {
+    this.todos = this.todos.filter((todo) => todo.id!==id);
+    console.log(this.todos);
+/*     let todoIndex = this.todos.indexOf(todo)
+    
+    this.todos.splice(todoIndex, 1) */
   }
 }
