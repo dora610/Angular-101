@@ -6,21 +6,22 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TodosComponent } from './components/todos/todos.component';
 import { TodoFormComponent } from './components/todo-form/todo-form.component';
 import { HeaderComponent } from './layout/header/header.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodosComponent,
     TodoFormComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
-    ReactiveFormsModule
+    FormsModule,
+    // ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

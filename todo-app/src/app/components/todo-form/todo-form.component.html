@@ -1,4 +1,4 @@
-<form>
+<form (ngSubmit)="onSubmit()">
   <div class="input-group flex-nowrap my-3">
     <label for="todo" class="input-group-text">Todo</label>
     <input
@@ -6,15 +6,13 @@
       class="form-control"
       name="todo"
       id="todo"
-      [formControl]="title"
+      [(ngModel)]="title"
       placeholder="e.g.: Go to gym"
     />
-    <button type="submit" class="btn btn-primary" (click)="onSubmit($event)">
-      Add todo
-    </button>
+    <button type="submit" class="btn btn-primary">Add todo</button>
   </div>
 </form>
 
 <p class="text-white">
-  {{ title.value }}
+  {{ title }}
 </p>
