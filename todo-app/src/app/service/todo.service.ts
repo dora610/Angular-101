@@ -52,19 +52,26 @@ export class TodoService {
   }
 
   toggleTodo(id: string) {
-    this.todos.map((todo) => {
+    this.todos.forEach((todo) => {
       if (todo.id === id) {
         todo.isCompleted = !todo.isCompleted;
       }
-      return todo;
     });
+
+    // FIXME: delete not working after toggle operation
+    /* this.todos = this.todos.map((todo)=>{
+      if(todo.id === id){
+        todo.isCompleted = !todo.isCompleted
+      }
+      return todo;
+    }) */
   }
 
-  deleteTodo(id: String) {
-    this.todos = this.todos.filter((todo) => todo.id!==id);
-    console.log(this.todos);
-/*     let todoIndex = this.todos.indexOf(todo)
-    
-    this.todos.splice(todoIndex, 1) */
+  deleteTodo(id: string) {
+    let todoIndex = this.todos.findIndex(todo=> todo.id === id)
+    this.todos.splice(todoIndex, 1);
+
+    // FIXME: no update on delete
+    // this.todos = this.todos.filter(todo=> todo.id!==id)
   }
 }

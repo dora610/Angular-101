@@ -1,1 +1,20 @@
-<p>todo-form works!</p>
+<form>
+  <div class="input-group flex-nowrap my-3">
+    <label for="todo" class="input-group-text">Todo</label>
+    <input
+      type="text"
+      class="form-control"
+      name="todo"
+      id="todo"
+      [formControl]="title"
+      placeholder="e.g.: Go to gym"
+    />
+    <button type="submit" class="btn btn-primary" (click)="onSubmit($event)">
+      Add todo
+    </button>
+  </div>
+</form>
+
+<p class="text-white">
+  {{ title.value }}
+</p>
