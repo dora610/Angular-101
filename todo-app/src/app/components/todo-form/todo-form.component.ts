@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import { FormControl } from '@angular/forms';
 import { Todo } from 'src/app/model/Todo';
 import { TodoService } from 'src/app/service/todo.service';
+
 @Component({
   selector: 'app-todo-form',
   templateUrl: './todo-form.component.html',
@@ -33,6 +34,7 @@ export class TodoFormComponent implements OnInit {
     this.title.setValue('');
   } */
 
+  // template driven form
   onSubmit() {
     let todo: Todo = {
       id: this.id.toString(),
