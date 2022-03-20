@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { passwordValidator } from './validators/password-validator';
 
 @Component({
   selector: 'app-root',
@@ -13,24 +14,38 @@ export class AppComponent implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    this.registrationForm = this.fb.group({
-      firstName: ['asdasdasd', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', Validators.email, Validators.required],
-      password: ['', Validators.pattern],
-      confirmPassword: ['', Validators.required],
-      acceptTnC: ['', Validators.requiredTrue],
-    });
+    this.registrationForm = this.fb.group(
+      {
+        firstName: ['', Validators.required],
+        lastName: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required, Validators.minLength(6)]],
+        confirmPassword: ['', Validators.required],
+        acceptTnC: ['', Validators.requiredTrue],
+      },
+      {
+        validators: passwordValidator,
+      }
+    );
   }
 
   onSubmit() {
+    console.log('inside submit');
+
     this.submitted = true;
-    if (this.registrationForm.invalid) return;
+    if (this.registrationForm.invalid) {
+      console.dir(this.registrationForm.errors);
+      return;
+    }
 
     console.table(this.registrationForm);
     console.table(this.registrationForm.value);
 
     alert('Successfully submitted');
+  }
+
+  get h() {
+    return this.registrationForm.controls;
   }
 
   onReset() {
