@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { User } from 'src/model/User';
 import { UserService } from './services/user.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { UserService } from './services/user.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  user:any;
+  user!:User;
   
   constructor(private userService: UserService, private toastr: ToastrService ){}
 
