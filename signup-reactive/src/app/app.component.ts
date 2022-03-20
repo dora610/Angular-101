@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
       return;
     }
 
-    console.table(this.registrationForm);
+    console.dir(this.registrationForm);
     console.table(this.registrationForm.value);
 
     alert('Successfully submitted');
