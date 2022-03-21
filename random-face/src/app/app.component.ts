@@ -15,7 +15,8 @@ export class AppComponent implements OnInit {
 
   fetchUser(){
     this.userService.getUser().subscribe(
-      (user)=> this.user = user.results[0]
+      (user)=> this.user = user.results[0],
+      (err)=> this.toastr.error(`Oops!! ${err.message}`)
     )
   }
 
