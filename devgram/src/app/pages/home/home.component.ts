@@ -19,20 +19,20 @@ export class HomeComponent implements OnInit {
   }
 
   handleFindUser(){
-    this.ghService.getUserDetails(this.userName).subscribe(
-      (user)=>{
+    this.ghService.getUserDetails(this.userName).subscribe({
+      next: (user)=>{
+        console.log(user);
         this.user = user
         this.error = null
         this.ref.detectChanges()
       },
-      (err)=>{
+      error: (err)=>{
         console.error(err);
         this.user = null;
         this.error = 'User not found'
         this.ref.detectChanges()
-
       }
-    )
+    })
   }
 
 }

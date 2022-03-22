@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
     private toast: ToastrService
   ) {
     auth.getUser().subscribe((user) => {
-      console.table(user);
+      // console.table(user);
       this.email = user?.email;
     });
   }
