@@ -24,7 +24,8 @@ import { ToastrModule } from 'ngx-toastr';
 // firebase
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import {AngularFireStorageModule} from '@angular/fire/compat/storage'
 
 // form
 import { FormsModule } from '@angular/forms';
@@ -53,7 +54,8 @@ import { HttpClientModule } from '@angular/common/http';
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFirestoreModule,
+    AngularFireDatabaseModule,
+    AngularFireStorageModule,
     FormsModule,
     HttpClientModule,
   ],
