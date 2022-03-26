@@ -47,19 +47,6 @@
               (change)="uploadFile($event)"
               class="form-control-file"
             />
-            <div
-              class="text-info text-center"
-              [hidden]="!uploadPercent || uploadPercent == 100"
-            >
-              uploading {{ uploadPercent | number: "1.0-0" }} % of 100% <br />
-              Please wait a little...
-            </div>
-            <div
-              class="text-success text-uppercase text-center"
-              *ngIf="uploadPercent == 100"
-            >
-              Upload finished
-            </div>
           </div>
   
           <div class="text-center">
@@ -70,11 +57,19 @@
         </form>
       </div>
     </div>
-    <div class="col col-md-6 mt-5">
-      <h3 *ngIf="picture" class="text-success text-center mt-5 text-uppercase">
-        Your Image
-      </h3>
-      <img *ngIf="picture" [src]="picture" alt="" class="img-fluid" />
+    <div class="col col-md-6">
+        <div class="text-info text-center" [hidden]="!uploadPercent || uploadPercent == 100">
+            uploading {{ uploadPercent | number: "1.0-0" }} % of 100% <br />
+            Please wait a little...
+        </div>
+        <div class="text-success text-uppercase text-center" *ngIf="uploadPercent == 100">
+            Upload finished
+        </div>
+    
+        <h3 *ngIf="picture" class="text-success text-center mt-2 text-uppercase">
+            Your Image
+        </h3>
+        <img *ngIf="picture" [src]="picture" alt="" class="img-fluid" />
     </div>
   </div>
   

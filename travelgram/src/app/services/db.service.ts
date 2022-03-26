@@ -12,15 +12,15 @@ export class DbService {
     return this.db.object(dataRef).set(data);
   }
 
-  getData(obj: string) {
-    return this.db.object(obj).valueChanges();
+  getData(dataRef: string) {
+    return this.db.object(dataRef).valueChanges();
   }
 
-  deleteData(obj: string) {
-    return this.db.object(obj).remove();
+  deleteData(dataRef: string) {
+    return this.db.object(dataRef).remove();
   }
 
-  updateData(obj: string, updatedData: any) {
-    return this.db.object(obj).update(updatedData);
+  updateData(dataRef: string, updatedData: any) {
+    return this.db.object(dataRef).update(updatedData);
   }
 }

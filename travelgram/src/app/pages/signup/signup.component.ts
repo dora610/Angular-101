@@ -7,14 +7,11 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { finalize } from 'rxjs/operators';
 import { AuthService } from 'src/app/services/auth.service';
-import { imageConfig } from 'src/utils/config';
 
 const { v4: uuidv4 } = require('uuid');
 
-
-
-
 const { readAndCompressImage } = require('browser-image-resizer');
+import { imageConfig } from 'src/utils/config';
 
 @Component({
   selector: 'app-signup',
