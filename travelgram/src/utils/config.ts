@@ -1,7 +1,7 @@
 export const imageConfig = {
-  quality: 0.5,
+  quality: 0.2,
   maxWidth: 800,
-  maxHeight: 600,
+  maxHeight: 800,
   autoRotate: true,
   debug: true,
 };

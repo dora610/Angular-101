@@ -12,7 +12,7 @@ import {
   redirectLoggedInTo,
 } from '@angular/fire/compat/auth-guard';
 
-const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['sigin']);
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['signin']);
 const redirectLoggedInToHome = () => redirectLoggedInTo(['']);
 
 const routes: Routes = [

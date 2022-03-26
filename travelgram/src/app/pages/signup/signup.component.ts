@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
-import { AuthService } from 'src/app/services/auth.service';
-
-const { v4: uuidv4 } = require('uuid');
-
-import { NgForm } from '@angular/forms';
-
-import { finalize } from 'rxjs/operators';
-
 // TODO: refactor - move firebase storage & db to separate injectable service
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { finalize } from 'rxjs/operators';
+import { AuthService } from 'src/app/services/auth.service';
 import { imageConfig } from 'src/utils/config';
 
-const readAndCompressImage = require('browser-image-resizer');
+const { v4: uuidv4 } = require('uuid');
+
+
+
+
+const { readAndCompressImage } = require('browser-image-resizer');
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -23,7 +24,7 @@ const readAndCompressImage = require('browser-image-resizer');
 export class SignupComponent implements OnInit {
   picture: string =
     'https://learnyst.s3.amazonaws.com/assets/schools/2410/resources/images/logo_lco_i3oab.png';
-  uploadPercent: number | undefined = 20;
+  uploadPercent: number | undefined = 0;
 
   constructor(
     private auth: AuthService,
